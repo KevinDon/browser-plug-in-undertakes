@@ -1,0 +1,60 @@
+{
+	"manifest_version": 2,
+	"name": "代发助手",
+	"version": "1.0",
+	"description": "代发助手",
+	"author": "代发助手",
+	"icons":
+	{
+		"48": "icon/dai.png",
+		"128": "icon/dai.png"
+	},
+	"browser_action": 
+	{
+		"default_icon": "icon/dai.png",
+		"default_title": "代发助手",
+		"default_popup": "tan.html"
+	},
+	"content_scripts": 
+	[
+		//taobao
+		{
+			//"matches": ["<all_urls>"],
+			"matches":
+			[
+			"https://wuliu.taobao.com/user/batch_consign.htm?trade_ids*",
+			"https://mms.pinduoduo.com/print/order/list*"
+			],
+			"js": ["jquery.min.js","content-script.js"],
+			"css": ["css/custom.css"],
+			"run_at":"document_start"
+		},
+		//pdd
+		{
+			"matches":
+			[
+			"https://mms.pinduoduo.com/print/order/list*"
+			],
+			"js": ["jquery.min.js","pdd.js"],
+			"css": ["css/custom.css"],
+			"run_at":"document_start"
+		},
+		//fahuo
+		{
+		//http://www.xmdaifa.com/index/order/fahuo.html
+			"matches":["*://*/index/order/fahuo.html"],
+			"js": ["jquery.min.js","daifa.js"],
+			"run_at":"document_start"
+		}
+	],
+	"background":{
+		"scripts":[
+			"jquery.min.js",
+			"core.js"
+		]
+	},
+	"permissions":
+	[
+		"contextMenus","tabs","*://*/*","webRequest","<all_urls>"
+	]
+}

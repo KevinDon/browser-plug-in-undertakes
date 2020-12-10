@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				overflow: hidden;
+				margin: 0px;
+				padding: 0px;
+				background-color:#F8F8FF;
+			}
+			html::-webkit-scrollbar {
+				/*滚动条整体样式*/
+				width: 10px;
+				/*高宽分别对应横竖滚动条的尺寸*/
+				height: 1px;
+			}
+			html::-webkit-scrollbar-thumb {
+				/*滚动条里面小方块*/
+				border-radius: 10px;
+				-webkit-box-shadow: inset 0 0 5px rgba(150, 150, 150, 0.6);
+				background: #bfb9b9;
+			}
+			html::-webkit-scrollbar-track {
+				/*滚动条里面轨道*/
+				-webkit-box-shadow: inset 0 0 5px rgba(150, 150, 150, 0.6);
+				border-radius: 10px;
+				background: #EDEDED;
+			}
+			.tan {
+				width: 355px;
+				height: 470px;
+				background-color: #ffffff;
+				box-shadow: 0px 0px 16px 0px rgba(150, 150, 150, 0.6);
+				border: solid 0px #eeeeee;
+				//border:none;
+			}
+
+			.tan_top {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				height: 62px;
+				padding: 0 20px;
+				font-size: 24px;
+				color: #333333;
+			}
+
+			.tan_left_title {
+				display: flex;
+				align-items: center;
+				border-top: 1px solid #EEEEEE;
+				border-bottom: 1px solid #EEEEEE;
+				height: 50px;
+			}
+
+			.tan_left_title img {
+				vertical-align: middle;
+				margin-right: 8px;
+			}
+
+			.tan_left_title p {
+				width: 50%;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 50px;
+				color: #f60007;
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+			.tan_left_title p:first-child {
+				border-right: 1px solid #eeeeee;
+				color: #ff5c00;
+			}
+
+			.tan_body {
+				display: flex;
+			}
+
+			.tan_list {
+				width: 50%;
+				text-align: center;
+				padding-top: 17px;
+			}
+
+			.tan_list:first-child {
+				border-right: 1px solid #EEEEEE;
+			}
+
+			.tan_list p {
+				width: 150px;
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				position: relative;
+				margin-bottom: 16px;
+				border-radius: 5px;
+				box-sizing: border-box;
+				font-size: 14px;
+				font-weight: bold;
+				cursor: pointer;
+			}
+
+			.tan_list p:nth-child(2n) {
+				background-color: #dcdcdc;
+				color: #999999;
+			}
+
+			.tan_list p:nth-child(2n+1) {
+				border: solid 1px #b4b4b4;
+				color: #333333;
+			}
+
+			#pdd_stop {
+				border: solid 1px #b4b4b4;
+				color: #333333;
+				background: none !important;
+			}
+			
+			#pdd_start_check {
+				border: solid 1px #b4b4b4;
+				color: #333333;
+				background: none !important;
+			}
+			
+			#getOrder_Taobao {
+				border: solid 1px #b4b4b4;
+				color: #333333;
+				background: none !important;
+			}
+
+			.tan_list p::before {
+				position: absolute;
+				bottom: -8px;
+				left: 50%;
+				transform: translate(0%, 50%);
+				content: '';
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				background: url(img/xia.png);
+			}
+
+			.tan_list p:last-child::before {
+				content: none;
+			}
+
+			#RecvInfo_InPut {
+				width: 350px;
+				height: 200px;
+				border: 1px solid #EEEEEE;
+				outline: none;
+			}
+
+			#guanbi {
+				cursor: pointer;
+			}
+			#SetUrl {
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				border-radius: 5px;
+				box-sizing: border-box;
+				font-size: 14px;
+				cursor: pointer;
+				text-align: center;
+				border: none;
+				outline: none;
+				margin: 0 0 0 12px !important;
+				width: 70px;
+				color: #FFFFFF;
+				background-color: #313131;
+				border-radius: 5px;
+			}
+
+			#UrlValue {
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				position: relative;
+				border-radius: 5px;
+				box-sizing: border-box;
+				font-size: 16px;
+				cursor: pointer;
+				padding-left: 10px;
+				outline: none;
+				width: 180px;
+				background-color: #ffffff;
+				border: solid 1px #b4b4b4;
+			}
+
+			.shu_suo {
+				padding: 13px 16px 0 25px;
+				margin-bottom: 16px;
+				display: flex;
+				justify-content: space-between;
+				border-top: 1px solid #eeeeee;
+				font-size: 16px;
+			}
+			.shu_suo p{
+				margin: 0;
+				 padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tan">
+			<div class="tan_top">
+				<span></span>
+				<span>发货流程</span>
+				<img src="img/close.png" id="guanbi">
+			</div>
+			<form>
+		<div class="shu_suo">
+			<p>网址：<input id="UrlValue" type="url" placeholder="请输入网址"/></p>
+				<input id="SetUrl" type="button" value="锁定" />
+		</div>
+			</form>
+			<div class="tan_left_title">
+				<p><img src="img/taobao.png">淘宝发货流程</p>
+				<p><img src="img/pinduoduo.png">拼多多发货流程</p>
+			</div>
+			<div class="tan_body">
+				<div class="tan_list">
+					<p href="#" id="open_Taobao">1.打开发货页面</p>
+
+					<p>2.选择发货订单</p>
+
+					<p href="#" id="getRecvInfo_Taobao">3.去代发网站下单</p>
+					<p href="#" id="getOrder_Taobao">4.自动发货</p>
+				</div>
+				<div class="tan_list">
+					<p href="#" id="open_PDD">1.打开发货页面</p>
+
+					<p>2.选择发货订单</p>
+					<p id="pdd_start">3.解锁订单</p>
+					<p id="pdd_start_check">4.解锁选中订单</p>
+					<p id="pdd_stop">5.暂停解锁</p>
+					<!-- <p href="#" id="getRecvInfo_PDD">3.获取订单信息</p> -->
+					<p href="#" id="pdd_get">5.去代发网站下单</p>
+				</div>
+			</div>
+
+		</div>
+
+		<textarea id='RecvInfo_InPut' rows="5" cols="100" value='test' hidden='hidden'>
+</textarea>
+	</body>
+	<script type="text/javascript" src="jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+</html>
