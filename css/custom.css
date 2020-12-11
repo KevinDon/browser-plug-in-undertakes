@@ -1,26 +1,13 @@
-
-.chrome-plugin-demo-head {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
- 
-.chrome-plugin-demo-head li {
-    float: left;
-}
 .chrome-plugin-demo-panel {
 	position: fixed;
-	left: 10px;
-	top: 200px;
+	right: 0;
+	bottom: 10px;
 	background: #3385ff;
 	padding: 10px;
     box-shadow: 0px 0px 10px #002761;
     border-radius: 3px;
     color: white;
 }
-
 .chrome-plugin-demo-panel a{
 	color: white;
     text-decoration: none;

@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a0c2716-7a3c-4ad2-9d5a-cd412d2c6468" name="Default Changelist" comment="提交插件代码">
+    <list default="true" id="5a0c2716-7a3c-4ad2-9d5a-cd412d2c6468" name="Default Changelist" comment="提交icons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon/dai.png" beforeDir="false" afterPath="$PROJECT_DIR$/icon/dai.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/popup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../extension-boilerplate-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chrome-plugin-demo-master/full-chrome-plugin-demo" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -54,6 +53,9 @@
       <option name="presentableId" value="Default" />
       <updated>1607584309719</updated>
       <workItem from="1607584311513" duration="2178000" />
+      <workItem from="1607592147406" duration="847000" />
+      <workItem from="1607648503011" duration="1560000" />
+      <workItem from="1607672773088" duration="1541000" />
     </task>
     <task id="LOCAL-00001" summary="提交插件代码">
       <created>1607584443116</created>
@@ -62,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607584443116</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="提交icons">
+      <created>1607592162073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607592162073</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,19 +87,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="提交插件代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交插件代码" />
+    <MESSAGE value="提交icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交icons" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2660" y="294" key="FileChooserDialogImpl" timestamp="1607585272712">
+    <state x="2660" y="294" key="FileChooserDialogImpl" timestamp="1607649302466">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2660" y="294" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1607585272712" />
-    <state x="2472" y="268" key="Vcs.Push.Dialog.v2" timestamp="1607584460056">
+    <state x="2660" y="294" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1607649302466" />
+    <state x="2472" y="268" key="Vcs.Push.Dialog.v2" timestamp="1607592166237">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2472" y="268" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1607584460056" />
+    <state x="2472" y="268" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1607592166237" />
+    <state x="662" y="212" width="596" height="626" key="find.popup" timestamp="1607673685895">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="662" y="212" width="596" height="626" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607673685895" />
   </component>
 </project>
