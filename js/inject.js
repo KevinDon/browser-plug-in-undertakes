@@ -21,4 +21,5 @@ function sendMessageToContentScriptByPostMessage(data)
 		hiddenDiv.dispatchEvent(customEvent);
 	}
 	window.sendMessageToContentScriptByEvent = sendMessageToContentScriptByEvent;
+
 })();
