@@ -19,19 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a0c2716-7a3c-4ad2-9d5a-cd412d2c6468" name="Default Changelist" comment="提交icons">
-      <change afterPath="$PROJECT_DIR$/img/icon-16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/icon-16.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/icon-19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/icon-19.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/icon.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/icon_bak.png" afterDir="false" />
+    <list default="true" id="5a0c2716-7a3c-4ad2-9d5a-cd412d2c6468" name="Default Changelist" comment="1、修改插件图标&#10;2、删除多余判断">
+      <change afterPath="$PROJECT_DIR$/build/chrome-plugin.crx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/chrome-plugin.pem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/content-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content-script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/yutang-batch-delivery.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/yutang-batch-delivery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest_bak.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest_bak.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/popup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +66,7 @@
       <workItem from="1607648503011" duration="1560000" />
       <workItem from="1607672773088" duration="1541000" />
       <workItem from="1607905752693" duration="1080000" />
-      <workItem from="1607930346894" duration="2300000" />
+      <workItem from="1607930346894" duration="6610000" />
     </task>
     <task id="LOCAL-00001" summary="提交插件代码">
       <created>1607584443116</created>
@@ -86,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607592162073</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1、修改插件图标&#10;2、删除多余判断">
+      <created>1607933349599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607933349599</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,7 +111,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="提交插件代码" />
     <MESSAGE value="提交icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交icons" />
+    <MESSAGE value="1、修改插件图标&#10;2、删除多余判断" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、修改插件图标&#10;2、删除多余判断" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2393" y="132" width="1022" height="765" key="#JSON" timestamp="1607930637555">
@@ -119,13 +123,14 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2660" y="294" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1607649302466" />
-    <state x="2472" y="268" key="Vcs.Push.Dialog.v2" timestamp="1607592166237">
+    <state x="2472" y="268" key="Vcs.Push.Dialog.v2" timestamp="1607933355461">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2472" y="268" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1607592166237" />
-    <state x="662" y="212" width="596" height="626" key="find.popup" timestamp="1607673685895">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2472" y="268" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1607933355461" />
+    <state x="2582" y="212" width="596" height="626" key="find.popup" timestamp="1607937585469">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="662" y="212" width="596" height="626" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607673685895" />
+    <state x="2582" y="212" width="596" height="626" key="find.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1607937585469" />
   </component>
 </project>

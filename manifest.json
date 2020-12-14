@@ -34,17 +34,6 @@
         },
         {
             "matches": [
-                "*://*/*.png",
-                "*://*/*.jpg",
-                "*://*/*.gif",
-                "*://*/*.bmp"
-            ],
-            "js": [
-                "js/show-image-content-size.js"
-            ]
-        },
-        {
-            "matches": [
                 //http://zhejiangyida.com/
                 "*://zhejiangyida.com/*"
             ],
@@ -70,9 +59,6 @@
         "js/inject.js"
     ],
     "homepage_url": "https://www.baidu.com",
-    "chrome_url_overrides": {
-        "newtab": "newtab.html"
-    },
     "options_page": "options.html",
     "options_ui": {
         "page": "options.html",
@@ -81,6 +67,5 @@
     "omnibox": {
         "keyword": "go"
     },
-    "default_locale": "zh_CN",
-    "devtools_page": "devtools.html"
+    "default_locale": "zh_CN"
 }
