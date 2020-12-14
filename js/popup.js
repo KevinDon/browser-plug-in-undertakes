@@ -247,7 +247,7 @@ $('#SetUrl').click(() => {
 
 //可以注入的时候用
 $('#open_Taobao').click(() => {
-    if (strUrl == "") {
+    if (strUrl === "") {
         alert('请先锁定发货地址！');
         return;
     }
@@ -292,11 +292,7 @@ $('#getOrder_Taobao').click(() => {
     var bg = chrome.extension.getBackgroundPage();
     console.log(bg.trackNumList);
     let trackNumList = bg.trackNumList;
-    if (strUrl == "") {
-        alert('请先锁定发货地址！');
-        return;
-    }
-    if (phone == '') {
+    if (phone === '') {
         alert('请先登录代发网站');
         return;
     }

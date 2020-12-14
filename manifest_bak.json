@@ -10,7 +10,7 @@
   "author": "Kevin <kevincn.tang@outlook.com> (https://github.com/KevinDon)",
   // 图标，一般偷懒全部用一个尺寸的也没问题
   "icons": {
-    "16": "img/icon.png",
+    "16": "img/icon-16.png",
     "48": "img/icon.png",
     "128": "img/icon.png"
   },
