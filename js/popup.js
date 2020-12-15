@@ -291,7 +291,7 @@ var phone = '15011760892';
 $('#getOrder_Taobao').click(() => {
     var bg = chrome.extension.getBackgroundPage();
     console.log(bg.trackNumList);
-    let trackNumList = bg.trackNumList;
+    let tracking = bg.trackNumList;
     if (phone === '') {
         alert('请先登录代发网站');
         return;
@@ -302,11 +302,10 @@ $('#getOrder_Taobao').click(() => {
             alert('请先打开淘宝发货页面！');
             return;
         }
-        sendMessageToContentScript({type:'automatic_delivery', trackNumList}, function (response) {
+        sendMessageToContentScript({type:'automatic_delivery', tracking}, function (response) {
             if (response) {
                 console.log(response);
             }
         });
-
     });
 });

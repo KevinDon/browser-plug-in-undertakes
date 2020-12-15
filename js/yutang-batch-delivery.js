@@ -1,7 +1,6 @@
 $(function () {
     $('.select-item.first .content-item div:first').click();
     $('.select-item.second .content-item div:last').click();
-
     chrome.extension.sendRequest({
         type: "getList",
         orderType: 'daifa',

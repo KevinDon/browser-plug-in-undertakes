@@ -21,7 +21,7 @@
 
 
 //-------------------- badge演示 ------------------------//
-/*(function()
+/*(function()injected-script操作content-script演示
 {
 	var showBadge = false;
 	var menuId = chrome.contextMenus.create({
@@ -50,7 +50,10 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log('收到来自content-script的消息：');
     console.log(request, sender, sendResponse);
-    sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
+    if (request.type == "automatic_delivery") {
+        request.tracking = trackNumList
+        sendResponse(request);
+    }
 });
 
 // $('#test_cors').click((e) => {
@@ -158,7 +161,7 @@ chrome.webRequest.onBeforeRequest.addListener(details => {
 var targetUrl = "";
 var strType = '';
 var lastList = [];
-var trackNumList = [];
+var trackNumList = {};
 var strInfo = "";
 var lastTableId;
 
@@ -198,6 +201,7 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
         getTrackNum(request, sender, sendResponse)
     } else if (request.type == "automatic_delivery") {
         // httpRequest('http://' + targetUrl + '/index/index/isloginmobile', aaaa);
+        sendResponse(request);
         console.log(trackNumList);
     }
 });
@@ -209,8 +213,8 @@ function getList(request, sender, sendResponse) {
 }
 
 function getTrackNum(request, sender, sendResponse) {
-    console.log(request.trackNum)
-    trackNumList = request.trackNum;
-    request.list = request.trackNum;
+    console.log(request.tracking)
+    trackNumList = request.tracking;
+    request.list = request.tracking;
     sendResponse(request);
 }

@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Batch Delivery Tools",
+    "name": "代发助手",
     "version": "1.0.0",
     "description": "A Third Party Batch Delivery Tools",
     "author": "Kevin <kevincn.tang@outlook.com> (https://github.com/KevinDon)",
@@ -15,7 +15,7 @@
     },
     "browser_action": {
         "default_icon": "img/icon.png",
-        "default_title": "这是一个示例Chrome插件",
+        "default_title": "代发助手",
         "default_popup": "popup.html"
     },
     "content_scripts": [
@@ -34,8 +34,27 @@
         },
         {
             "matches": [
-                //http://zhejiangyida.com/
-                "*://zhejiangyida.com/*"
+                "*://*.dianshanghu.com/*"
+            ],
+            "js": [
+                "js/jquery-1.8.3.js",
+                "js/yutang-batch-delivery.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "*://*.zhejiangyida.com/*"
+            ],
+            "js": [
+                "js/jquery-1.8.3.js",
+                "js/yutang-batch-delivery.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "*://*.lipinzhonghu.com/*"
             ],
             "js": [
                 "js/jquery-1.8.3.js",
@@ -43,6 +62,7 @@
             ],
             "run_at": "document_start"
         }
+
     ],
     "permissions": [
         "contextMenus",

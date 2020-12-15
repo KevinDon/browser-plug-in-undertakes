@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
             $('[data-tuiguang]').parents('[data-click]').remove();
         }
 
-        fuckBaiduAD();
-        initCustomPanel();
-        initCustomEventListen();
+       //fuckBaiduAD();
+        //initCustomPanel();
+        //initCustomEventListen();
     }
 });
 
@@ -163,9 +163,9 @@ function tip(info) {
 //--------------------Kevin----------------------------//
 //Chrome Plugin
 $(function () {
-    var div = '<div style="position: fixed;right: 60px;top:160px;line-height:28px;font-size:25px;color:white;height: 198px;width: 40px;text-align: center; background: #ff464e;padding:3px 2px; display:inline-block; cursor:pointer;border-radius:6px;z-index:99999;" id="batch_delivery" >从代发网站下单</div>';
+    var div = '<div style="position: fixed;right: 60px;top:160px;line-height:28px;font-size:25px;color:white;height: 198px;width: 40px;text-align: center; background: #ffce00;padding:3px 2px; display:inline-block; cursor:pointer;border-radius:6px;z-index:99999;" id="batch_delivery" >从代发网站下单</div>';
     $('#step2>h3').prepend(div);
-    var div1 = '<div style="position: fixed;right: 60px;top:380px;line-height:28px;font-size:25px;color:white;height: 116px;width: 40px;text-align: center; background: #ff464e;padding:3px 2px; display:inline-block; cursor:pointer;border-radius:6px;z-index:99999;" id="automatic_delivery" >自动发货</div>';
+    var div1 = '<div style="position: fixed;right: 60px;top:380px;line-height:28px;font-size:25px;color:white;height: 116px;width: 40px;text-align: center; background: #ffce00;padding:3px 2px; display:inline-block; cursor:pointer;border-radius:6px;z-index:99999;" id="automatic_delivery" >自动发货</div>';
     $('#step2>h3').prepend(div1);
     $('#batch_delivery').click(function () {
         //发送消息给后台js
@@ -191,17 +191,12 @@ $(function () {
     })
 
     $('#automatic_delivery').click(function () {
-        chrome.extension.sendRequest({
+        chrome.extension.sendMessage({
             type: "automatic_delivery",
-            orderType: 'taobao',
         }, function (response) {
-            if (response.type == 'alert') {
-                alert(response.message);
-            }
-            console.log(response);
+            setShippingNumber(response.tracking)
         });
     })
-
 })
 
 
@@ -210,18 +205,16 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request == 'getRecvInfo_Taobao') {
         $('#batch_delivery').click();
         sendResponse(request);
-    } else if (request.type == 'getOrder_Taobao') {
+    } else if (request.type === 'getOrder_Taobao') {
         getOrder_Taobao(request);
         sendResponse(request);
-    } else if(request == 'get_tracking_number') {
+    } else if(request === 'get_tracking_number') {
         $('.el-table_1_column_8 .el-button.el-button--success').click();
         setTimeout(function(){
             getTrackingNumber(request)
         }, 3000)
-
-    } else if (request.type == 'automatic_delivery'){
-        console.log(request.trackNumList);
-        setShippingNumber(request.trackNumList)
+    } else if (request.type === 'automatic_delivery'){
+        setShippingNumber(request.tracking)
     }else {
         sendResponse('我收到你的消息了：');
     }
@@ -273,25 +266,42 @@ function format(str) {
 
 function getTrackingNumber(){
     let trackNumDom = $('.el-dialog .el-table__row');
-    let trackNum = []
-    trackNumDom.each(function () {
-        console.log($(this).children('td:nth-child(4)').text());
-        trackNum.push($(this).children('td:nth-child(4)').text());
+    let tracking = {
+        shippingMethod: '',
+        trackNum: []
+    }
+
+    trackNumDom.each(function (index) {
+
+        let trackNum = $(this).children('td:nth-child(4)').text()
+        tracking.shippingMethod = $(this).children('td:nth-child(6)').text();
+        tracking.trackNum.push(trackNum);
     })
+
     chrome.extension.sendRequest({
         type: "get_tracking_number",
         orderType: 'taobao',
-        trackNum
+        tracking
     }, function (response) {
         console.log(response);
     });
 }
 
 function setShippingNumber(trackingNumberList) {
-    var shippingDom = $('.shipping-number input')
-    console.log(shippingDom);
-    shippingDom.each(function(index){
-        $(this).val(trackingNumberList[index]);
+    let shippingDom = $('.shipping-number input')
+    let shippingMethodDom = $('select.codstep2-select')
+    //获取shippingMethod的code
+    let shippingMethod = []
+    let optionDom =shippingMethodDom.children('option');
+    optionDom.each(function(index){
+        let shippingName = $(this).text();
+        let code = $(this).attr('value')
+        if($(this).text() === $.trim(trackingNumberList.shippingMethod)){
+            shippingMethodDom.val(code);
+        }
     })
-    console.log('OK')
+
+    shippingDom.each(function(index){
+        $(this).val(trackingNumberList['trackNum'][index]);
+    })
 }
